@@ -19,7 +19,7 @@ Dots for us from Brazil do not feel left out
 Example:
 
 ```go
-fmt.Printf("You owe R$%s.\n", humanize.Dotf(6582491)) // You owe R$6.582.491.
+fmt.Printf("You owe R$%s.\n", humanize.Dotf(6582491.69)) // You owe R$6.582.491,69
 ```
 
 ## Sizes
