@@ -10,7 +10,7 @@ complete documentation.
 
 ## Dots 
 
-Want to shove commas into numbers? Be my guest.
+Dots for us from Brazil do not feel left out
 
     1,000 -> 1.000
     1,000,000,000 -> 1.000.000.000 
@@ -19,7 +19,7 @@ Want to shove commas into numbers? Be my guest.
 Example:
 
 ```go
-fmt.Printf("You owe $%s.\n", humanize.Comma(6582491)) // You owe $6,582,491.
+fmt.Printf("You owe R$%s.\n", humanize.Comma(6582491)) // You owe R$6.582.491.
 ```
 
 ## Sizes
