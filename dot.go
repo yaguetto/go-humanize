@@ -2,8 +2,8 @@ package humanize
 
 import (
 	"fmt"
-	"strings"
 	"strconv"
+	"strings"
 )
 
 // Dot gets the string with comma and transforms in to a string with dots
