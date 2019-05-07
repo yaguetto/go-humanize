@@ -16,15 +16,17 @@ func Dot(v int64) string {
 // just that simple so us from Brazil don't feel excluded
 // e.g 834,142.30 -> 834.142,30
 func Dotf(v float64) string {
+	// spliting the number in number after and before dot: "100000.00" -> "100000" & ".00"
+	var vSplitInDot = strings.Split(fmt.Sprintf("%f", v), ".")
 
-	var vWithCommas = Commaf(v)
+	// get the value befor the dot with commmas
+	var vBeforeDot, _ = strconv.ParseFloat(vSplitInDot[0], 64)
+	var vWithCommas = Commaf(vBeforeDot)
 
-	// split the number on the dot, "10,012.50" -> "10,012" % ".50"
-	var vSplitInComma = strings.Split(vWithCommas, ".")
-
-	var vCommasToDots = strings.Replace(vSplitInComma[0], ",", ".", -1)
-
-	return fmt.Sprintf("%s,%s", vCommasToDots, vSplitInComma[1][0:])
+	// and here replace the commas with dots of the Commaf result: 100,000 -> 100.000
+	var vCommasToDots = strings.Replace(vWithCommas, ",", ".", -1)
+	// return the values with dots finnaly: "100.000" & ".00" -> "100.000,00"
+	return fmt.Sprintf("%s,%s", vCommasToDots, vSplitInDot[1][0:])
 }
 
 // DotWithDigits get the float and put the number of
