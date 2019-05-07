@@ -12,14 +12,14 @@ complete documentation.
 
 Dots for us from Brazil do not feel left out
 
-    1,000 -> 1.000
-    1,000,000,000 -> 1.000.000.000 
-    -100,000 -> -100.000
+    1,000.00 -> 1.000,00
+    1,000,000,000.00 -> 1.000.000.000,00
+    -100,000.00 -> -100.000,00
 
 Example:
 
 ```go
-fmt.Printf("You owe R$%s.\n", humanize.Comma(6582491)) // You owe R$6.582.491.
+fmt.Printf("You owe R$%s.\n", humanize.Dotf(6582491)) // You owe R$6.582.491.
 ```
 
 ## Sizes

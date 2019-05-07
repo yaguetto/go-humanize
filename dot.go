@@ -7,8 +7,15 @@ import (
 
 // Dot gets the string with comma and transforms in to a string with dots
 // just that simple so us from Brazil don't feel excluded
+// e.g 834,142 -> 834.142
+func Dot(v int64) string {
+	return strings.Replace(Comma(v), ",", ".", -1)
+}
+
+// Dotf gets the string with comma and transforms in to a string with dots
+// just that simple so us from Brazil don't feel excluded
 // e.g 834,142.30 -> 834.142,30
-func Dot(v float64) string {
+func Dotf(v float64) string {
 
 	var vWithCommas = Commaf(v)
 
@@ -24,5 +31,5 @@ func Dot(v float64) string {
 // decimals as in the argument d
 // e.g  v = 834,142.30 and d = 1 -> 834,142.3
 func DotWithDigits(v float64, d int) string {
-	return stripTrailingDigitsDot(Dot(v), d)
+	return stripTrailingDigits(Dotf(v), d)
 }
