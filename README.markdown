@@ -3,10 +3,24 @@
 Just a few functions for helping humanize times and sizes.
 
 `go get` it as `github.com/dustin/go-humanize`, import it as
-`"github.com/dustin/go-humanize"`, use it as `humanize`.
+`"github.com/dustin/go-humanize"` for the original one, `"github.com/yaguetto/go-humanize"` for my forked version with dots, use it as `humanize`.
 
 See [godoc](https://godoc.org/github.com/dustin/go-humanize) for
 complete documentation.
+
+## Dots 
+
+Want to shove commas into numbers? Be my guest.
+
+    1,000 -> 1.000
+    1,000,000,000 -> 1.000.000.000 
+    -100,000 -> -100.000
+
+Example:
+
+```go
+fmt.Printf("You owe $%s.\n", humanize.Comma(6582491)) // You owe $6,582,491.
+```
 
 ## Sizes
 
