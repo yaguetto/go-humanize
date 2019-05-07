@@ -34,5 +34,5 @@ func Dotf(v float64) string {
 // decimals as in the argument d
 // e.g  v = 834,142.30 and d = 1 -> 834,142.3
 func DotWithDigits(v float64, d int) string {
-	return stripTrailingDigits(Dotf(v), d)
+	return stripTrailingDigitsDot(Dotf(v), d)
 }
