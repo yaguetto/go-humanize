@@ -34,6 +34,20 @@ func stripTrailingDigits(s string, digits int) string {
 	return s
 }
 
+func stripTrailingDigitsDot(s string, digits int) string {
+	if i := strings.Index(s, ","); i >= 0 {
+		if digits <= 0 {
+			return s[:i]
+		}
+		i++
+		if i+digits >= len(s) {
+			return s
+		}
+		return s[:i+digits]
+	}
+	return s
+}
+
 // Ftoa converts a float to a string with no trailing zeros.
 func Ftoa(num float64) string {
 	return stripTrailingZeros(strconv.FormatFloat(num, 'f', 6, 64))
